@@ -1,0 +1,29 @@
+#myForm{
+    display:none;
+    position: fixed;
+    
+    top:200px;
+    transform: translate(-50%, 0);
+    left: 50%;
+    width: 400px;
+    height: 380px;
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    border: solid 5px;
+    border-radius: 15px;
+}
+
+.form-container{
+    margin: 0 auto;
+    justify-content:space-around;
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+    height: 340px;
+    align-items:center;
+}
+
+input{
+    font-size:18px;
+}

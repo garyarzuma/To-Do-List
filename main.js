@@ -1,0 +1,1 @@
+(()=>{"use strict";(()=>{const o=document.getElementById("myForm");console.log(o)})(),(()=>{const o=(o=>({title:o}))("My First Project");console.log(o)})()})();
