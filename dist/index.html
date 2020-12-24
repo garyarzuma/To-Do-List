@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
     <meta charset="UTF-8">
-    <title>Get-2-It</title>
+    <title>Project Tasker</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel = "stylesheet" href="to-do-list.css">
     <link rel="shortcut icon" href="#" />
     <body>
-        <h1>Get-2-It</h1>
-        <button type="button" class="addProjectPopUp">+ Project</button>
+        <div class = "heading">
+            <h1>Project Tasker</h1>
+            <button type="button" class="addProjectPopUp">+ Project</button>
+        </div>
         <div class="project-form-popup" id="myProjectForm">
             <form class="form-container">
                 <h2>Add New Project</h2>
@@ -26,11 +28,9 @@
                 <div class = "dropdown">
                     <label name = "dropdown">Priority</label>
                     <select name = "dropdown">
-                        <option value = "1" selected>1 (Highest)</option>
-                        <option value = "2">2</option>
-                        <option value = "3">3</option>
-                        <option value = "4">4</option>
-                        <option value = "5">5 (Lowest)</option>
+                        <option value = "High" selected>High</option>
+                        <option value = "Medium">Medium</option>
+                        <option value = "Low">Low</option>
                     </select>
                 </div>
                 <button type="button" class="addButton">Add</button>

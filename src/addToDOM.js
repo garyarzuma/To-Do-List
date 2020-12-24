@@ -16,7 +16,7 @@ const addToDOM = (() => {
 
         const myButton = document.createElement('button');
         myButton.className = "addTaskButton";
-        myButton.textContent = "+ Task";
+        myButton.textContent = "+";
         myProjectDiv.appendChild(myButton);
 
         eventListener.addButtonListener(myButton);
@@ -41,6 +41,8 @@ const addToDOM = (() => {
             }
         }
     }
+
+    //const setPriorityColor = ()
 
     return{displayProject, displayTask};
 })();
