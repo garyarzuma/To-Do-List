@@ -6,9 +6,13 @@ const addToDOM = (() => {
         const myProjectDiv = document.createElement('div');
         myProjectDiv.className = "projectItem";
         myProjectDiv.id = myProject.title;
-        document.querySelector(".project-Container").appendChild(myProjectDiv)
+        document.querySelector(".project-Container").appendChild(myProjectDiv);
 
-        myProjectDiv.textContent = myProject.title;
+        const myTitleDiv = document.createElement('div');
+        myTitleDiv.className = "projectTitle";
+        myProjectDiv.appendChild(myTitleDiv);
+
+        myTitleDiv.textContent = myProject.title;
 
         const myButton = document.createElement('button');
         myButton.className = "addTaskButton";

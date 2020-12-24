@@ -5,9 +5,15 @@ import addItemPopUp from './addItemPopUp';
 import addProjectPopUp from './addProjectPopUp';
 import eventListener from './eventListener';
 
+
 const index = (() => {
     
+    let myProjectList = [];
+
     const defaultProject = projectItem("My First Project");
     addToDOM.displayProject(defaultProject);
 
+    return {myProjectList};
 })();
+
+export default index;
