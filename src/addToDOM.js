@@ -23,7 +23,7 @@ const addToDOM = (() => {
         const myTaskDiv = document.createElement('div');
         
         myTaskDiv.className = "taskItem";
-        console.log(myTask.myProject)
+        
         const myProjectDiv = document.getElementById(`${myTask.myProject}`)
 
         myProjectDiv.appendChild(myTaskDiv);

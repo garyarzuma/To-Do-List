@@ -6,6 +6,16 @@
     <link rel = "stylesheet" href="to-do-list.css">
     <body>
         <h1>Get-2-It</h1>
+        <button type="button" class="addProjectPopUp">+ Project</button>
+        <div class="project-form-popup" id="myProjectForm">
+            <form class="form-container">
+                <h2>Add New Project</h2>
+                <input type="text" placeholder="Title" name="title" size = "30" maxlength = "60" required>
+                <input type="text" placeholder="Description"  name="description" size = "30" maxlength = "40" required>
+                <button type="button" class="addProjectButton">Add</button>
+                <button type="button" class="closeProjectButton">Close</button>
+            </form>
+        </div>
         <div class="form-popup" id="myForm">
             <form class="form-container">
                 <h2>Add New To-Do to</h2>

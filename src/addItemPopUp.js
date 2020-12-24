@@ -28,6 +28,7 @@ const addItemPopUp = (() => {
                 myForm.dropdown.value);
 
         myItem.myProject = selectedProject.textContent;
+       // JSON.parse(selectedProject.textContent).addTask(myItem); need to add array that holds projects
 
         addToDOM.displayTask(myItem);
 
