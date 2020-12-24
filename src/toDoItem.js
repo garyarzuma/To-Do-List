@@ -1,8 +1,8 @@
 const toDoItem= ((title, description, dueDate, priority) => {
-    const text = function() {
-        console.log(title)
-    };
-    return{title, description, dueDate, priority, text}
+
+    let myProject = "My First Project";
+
+    return{title, description, dueDate, priority, myProject}
  });
  
  export default toDoItem;
