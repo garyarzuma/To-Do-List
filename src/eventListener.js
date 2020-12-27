@@ -1,5 +1,7 @@
 import addItemPopUp from "./addItemPopUp";
 import addProjectPopUp from './addProjectPopUp';
+import projectItem from './projectItem';
+import index from './index'
 
 const eventListener = (() => {
 
@@ -18,13 +20,42 @@ const eventListener = (() => {
     const submitTaskDiv = document.querySelector('.addButton');        
     submitTaskDiv.addEventListener("click", addItemPopUp.handleFormInput); //import addItemPopUp.js
     
-   const addButtonListener = (div) => {
+    const addButtonListener = (div) => {
        div.addEventListener("click", addItemPopUp.showForm);
     };
 
-    return {addButtonListener};
+   const addDeleteTaskListener = (div) => {
+        div.addEventListener("click", removeTask);
+    }; 
+
+    const addDeleteProjectListener = (div) => {
+        div.addEventListener("click", removeProject);
+    };
+
+    return {addButtonListener, addDeleteTaskListener, addDeleteProjectListener};
 })();
  
+const removeTask = (event) => {
+    const projectName = event.target.parentElement.parentElement.id;
+    const taskName = event.target.parentElement.querySelector('.title').textContent;
+    const myProject = index.myProjectList.find(x => x.title === projectName);
+    const myTask = myProject.myTaskList.find(x => x.title ===  taskName)
+
+    myProject.removeTask(myTask); //remove from the project object
+
+    event.target.parentElement.remove(); //remove from the HTML document
+};
+
+const removeProject = (event) => {
+    const projectName = event.target.parentElement.id;
+    const myProject = index.myProjectList.find(x => x.title === projectName);
+    const indexPos = index.myProjectList.indexOf(myProject);  
+        if (indexPos > -1) {
+            index.myProjectList.splice(indexPos, 1);
+            event.target.parentElement.remove();
+        }          
+};
+
  export default eventListener;
 
 

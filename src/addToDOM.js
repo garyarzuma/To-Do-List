@@ -1,4 +1,5 @@
 import eventListener from './eventListener';
+import projectItem from './projectItem';
 
 const addToDOM = (() => {
     
@@ -20,6 +21,13 @@ const addToDOM = (() => {
         myProjectDiv.appendChild(myButton);
 
         eventListener.addButtonListener(myButton);
+
+        const deleteButton = document.createElement('div');
+        deleteButton.className = "deleteProjectButton";
+        deleteButton.textContent = "x";
+        myProjectDiv.appendChild(deleteButton);
+        
+        eventListener.addDeleteProjectListener(deleteButton);
     }
 
 
@@ -40,6 +48,14 @@ const addToDOM = (() => {
                 myTaskDiv.appendChild(myDivNode);
             }
         }
+
+        const deleteButton = document.createElement('div');
+        deleteButton.className = "deleteButton";
+        deleteButton.textContent = "x";
+        myTaskDiv.appendChild(deleteButton);
+        
+        eventListener.addDeleteTaskListener(deleteButton);
+
     }
 
     //const setPriorityColor = ()

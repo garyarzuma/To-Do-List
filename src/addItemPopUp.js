@@ -1,5 +1,6 @@
 import addToDOM from './addToDOM';
 import toDoItem from './toDoItem';
+import index from './index';
 
 const addItemPopUp = (() => {
     const myForm = document.getElementById('myForm');        
@@ -28,9 +29,12 @@ const addItemPopUp = (() => {
                 myForm.dropdown.value);
 
         myItem.myProject = selectedProject.textContent;
-       // JSON.parse(selectedProject.textContent).addTask(myItem); need to add array that holds projects
+
+        const projectObj = index.myProjectList.find(x => x.title === selectedProject.textContent);
+        projectObj.addTask(myItem);
 
         addToDOM.displayTask(myItem);
+        
 
         closeForm();
         clearForm(myForm); 

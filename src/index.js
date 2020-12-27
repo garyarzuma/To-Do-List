@@ -13,6 +13,8 @@ const index = (() => {
     const defaultProject = projectItem("My First Project");
     addToDOM.displayProject(defaultProject);
 
+    myProjectList.push(defaultProject);
+
     return {myProjectList};
 })();
 
