@@ -43,12 +43,22 @@ h1{
     transform: translate(-50%, 0);
     left: 50%;
     width: 400px;
-    height: 380px;
+    height: 280px;
     z-index: 1;
     background-color: rgb(255, 255, 255);
     text-align: center;
     border: solid 5px;
     border-radius: 15px;
+}
+
+.form-container-project{
+    margin: 0 auto;
+    justify-content:space-around;
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+    height: 240px;
+    align-items:center;
 }
 
 .form-container{
@@ -59,6 +69,16 @@ h1{
     width: 340px;
     height: 340px;
     align-items:center;
+}
+
+.fillError{
+    display:none;
+    color:red;
+    font-size: 14px;
+}
+
+#myProject{
+    word-wrap: break-word;
 }
 
 input{
@@ -114,6 +134,8 @@ input{
 .description{
     padding-left: 40px;
     font-size:12px;
+    max-width: 450px;
+    word-wrap: break-word;
 }
 
 .dueDate{

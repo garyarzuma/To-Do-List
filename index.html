@@ -11,7 +11,7 @@
             <button type="button" class="addProjectPopUp">+ Project</button>
         </div>
         <div class="project-form-popup" id="myProjectForm">
-            <form class="form-container">
+            <form class="form-container-project">
                 <h2>Add New Project</h2>
                 <input type="text" placeholder="Title" name="title" size = "30" maxlength = "60" required>
                 <button type="button" class="addProjectButton">Add</button>
@@ -23,7 +23,7 @@
                 <h2>Add New To-Do to</h2>
                 <h2 id = "myProject">My Default Project</h2>
                 <input type="text" placeholder="Title" name="title" size = "30" maxlength = "60" required>
-                <input type="text" placeholder="Description"  name="description" size = "30" maxlength = "40" required>
+                <input type="text" placeholder="Description"  name="description" size = "30" maxlength = "400" required>
                 <input type="text" placeholder="Date (mm/dd/yyyy)" name="date" size = "17" maxlength = "10" required>
                 <div class = "dropdown">
                     <label name = "dropdown">Priority</label>
@@ -33,6 +33,7 @@
                         <option value = "Low">Low</option>
                     </select>
                 </div>
+                <div class = "fillError">*Required Field</div>
                 <button type="button" class="addButton">Add</button>
                 <button type="button" class="closeButton">Close</button>
             </form>
