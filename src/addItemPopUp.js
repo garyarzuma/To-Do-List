@@ -22,23 +22,28 @@ const addItemPopUp = (() => {
     const handleFormInput = (e) => {
         const myForm = e.target.form;
         const selectedProject = document.getElementById("myProject");
-
-        const myItem = toDoItem(myForm.title.value, 
-                myForm.description.value, 
-                myForm.date.value, 
-                myForm.dropdown.value);
-
-        myItem.myProject = selectedProject.textContent;
-
-        const projectObj = index.myProjectList.find(x => x.title === selectedProject.textContent);
-        projectObj.addTask(myItem);
-
-        addToDOM.displayTask(myItem);
+        const fillError = document.querySelector(".fillError")
         
+        if(myForm.title.value !== "" && myForm.description.value !== "" && myForm.date.value !== "" && myForm.dropdown.value !== ""){
+            const myItem = toDoItem(myForm.title.value, 
+                    myForm.description.value, 
+                    myForm.date.value, 
+                    myForm.dropdown.value);
 
-        closeForm();
-        clearForm(myForm); 
-       
+            myItem.myProject = selectedProject.textContent;
+
+            const projectObj = index.myProjectList.find(x => x.title === selectedProject.textContent);
+            projectObj.addTask(myItem);
+
+            addToDOM.displayTask(myItem);
+            
+            closeForm();
+            fillError.style.display = "none";
+            clearForm(myForm); 
+        } 
+        else{
+            fillError.style.display = "block";
+        };
     }
 
     return{showForm, closeForm, handleFormInput,};

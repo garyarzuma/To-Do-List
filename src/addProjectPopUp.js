@@ -21,15 +21,12 @@ const addProjectPopUp = (() => {
 
         const myProject = projectItem(myForm.title.value);
 
-       // JSON.parse(selectedProject.textContent).addTask(myItem); need to add array that holds projects
-
         addToDOM.displayProject(myProject);
-
         index.myProjectList.push(myProject);
 
         closeForm();
         clearForm(myForm); 
-       
+      
     } 
 
     return{showForm, closeForm, handleFormInput,};
