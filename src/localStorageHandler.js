@@ -6,7 +6,7 @@ import toDoItem from './toDoItem';
 const localStorageHandler = (() => {
 
     const displayCurrentProjects = () => {
-        Object.keys(localStorage).forEach( (key) => {
+        Object.keys(localStorage).forEach( (key) => {   //goes through all items in local storage adds the projects to the myProjectList array and displays. 
            const myObj = JSON.parse(localStorage.getItem(key))
            if(!myObj.myProject){
                 if(myObj.title !== "My First Project"){
@@ -18,7 +18,7 @@ const localStorageHandler = (() => {
             }
         });
 
-        Object.keys(localStorage).forEach( (key) => {
+        Object.keys(localStorage).forEach( (key) => {   //goes through the local storage tasks and adds them to the previously added projects and displays. 
             const myObj = JSON.parse(localStorage.getItem(key))    
             if(myObj.myProject){
                 const myTask = toDoItem(myObj.title, myObj.description, myObj.dueDate, myObj.priority);
@@ -44,11 +44,11 @@ const localStorageHandler = (() => {
         return localStorage.getItem("MyArray");
     }
 
-    const removeItem = (myObj) => {
+    const removeItem = (myObj) => {  
         Object.keys(localStorage).forEach( (key) => {
             const myJSON = JSON.parse(localStorage.getItem(key))
             console.log(myObj.title + " hello  " + myJSON.title)
-            if(myObj.title === myJSON.title){
+            if(myObj.title === myJSON.title){  //deletes items from local storage by matching the title. Will need to address bugs related to tasks with same name ! 
                 localStorage.removeItem(key);        
             }
          });

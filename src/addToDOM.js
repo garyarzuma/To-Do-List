@@ -1,7 +1,6 @@
 import eventListener from './eventListener';
-import projectItem from './projectItem';
 
-const addToDOM = (() => {
+const addToDOM = (() => { //module to control everything being displayed on the DOM
 
     const displayProject = (myProject) => {
         const myProjectDiv = document.createElement('div');
@@ -29,7 +28,6 @@ const addToDOM = (() => {
         
         eventListener.addDeleteProjectListener(deleteButton);
     }
-
 
     const displayTask = (myTask) => {
         const myTaskDiv = document.createElement('div');

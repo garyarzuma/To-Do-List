@@ -3,7 +3,7 @@ import addProjectPopUp from './addProjectPopUp';
 import index from './index'
 import localStorageHandler from './localStorageHandler'
 
-const eventListener = (() => {
+const eventListener = (() => { //handles all of the event handlers for the project in 1 module. 
 
     const openProjectPopUpDiv = document.querySelector('.addProjectPopUp');
     openProjectPopUpDiv.addEventListener("click", addProjectPopUp.showForm);

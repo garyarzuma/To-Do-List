@@ -3,7 +3,7 @@ import toDoItem from './toDoItem';
 import index from './index';
 import localStorageHandler from './localStorageHandler'
 
-const addItemPopUp = (() => {
+const addItemPopUp = (() => {  //module to control everything related to the forms for input on tasks and projects
     const myForm = document.getElementById('myForm');        
 
     const showForm = (e) => {
@@ -25,15 +25,15 @@ const addItemPopUp = (() => {
         const selectedProject = document.getElementById("myProject");
         const fillError = document.querySelector(".fillError")
         
-        if(myForm.title.value !== "" && myForm.description.value !== "" && myForm.date.value !== "" && myForm.dropdown.value !== ""){
-            const myItem = toDoItem(myForm.title.value, 
+        if(myForm.title.value !== "" && myForm.description.value !== "" && myForm.date.value !== "" && myForm.dropdown.value !== ""){  //if everything is filled in 
+            const myItem = toDoItem(myForm.title.value, //creates objects for tasks
                     myForm.description.value, 
                     myForm.date.value, 
                     myForm.dropdown.value);
 
             myItem.myProject = selectedProject.textContent;
 
-            const projectObj = index.myProjectList.find(x => x.title === selectedProject.textContent);
+            const projectObj = index.myProjectList.find(x => x.title === selectedProject.textContent); //find the associated project and store the task in its task list
             projectObj.addTask(myItem);
 
             localStorageHandler.storeTask(myItem);    
