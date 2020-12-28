@@ -1,6 +1,7 @@
 import addToDOM from './addToDOM';
 import projectItem from './projectItem';
 import index from './index';
+import localStorageHandler from './localStorageHandler';
 
 const addProjectPopUp = (() => {
     const myForm = document.getElementById('myProjectForm');        
@@ -18,15 +19,22 @@ const addProjectPopUp = (() => {
 
     const handleFormInput = (e) => {
         const myForm = e.target.form;
+        const fillError = document.querySelector(".fillErrorProject")
 
-        const myProject = projectItem(myForm.title.value);
+        if(myForm.title.value !== ""){
+            const myProject = projectItem(myForm.title.value);
 
-        addToDOM.displayProject(myProject);
-        index.myProjectList.push(myProject);
+            addToDOM.displayProject(myProject);
+            index.myProjectList.push(myProject);
+            localStorageHandler.storeProject(myProject);  
+            console.log(index.myProjectList)
 
-        closeForm();
-        clearForm(myForm); 
-      
+            fillError.style.display = "none";
+            closeForm();
+            clearForm(myForm); 
+        } else{
+            fillError.style.display = "block";
+        }
     } 
 
     return{showForm, closeForm, handleFormInput,};

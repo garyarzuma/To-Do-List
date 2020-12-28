@@ -16,11 +16,33 @@ h1{
     margin:0;
     padding-top:15px;
 }
+h2{
+    margin-bottom: 0px;
+    
+}
+
+h3{
+    margin-top: 0px;
+    font-size:24px;
+}
+
+#myProject{
+    word-wrap: break-word;
+}
 
 .heading{
     background-color: rgb(183, 208, 224);
     border-bottom: 4px solid black;
 }
+
+.project-Container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: left;
+}
+
 #myForm{
     display:none;
     position: fixed;
@@ -77,8 +99,11 @@ h1{
     font-size: 14px;
 }
 
-#myProject{
-    word-wrap: break-word;
+
+.fillErrorProject{
+    display:none;
+    color:red;
+    font-size: 14px;
 }
 
 input{

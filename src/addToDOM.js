@@ -2,7 +2,7 @@ import eventListener from './eventListener';
 import projectItem from './projectItem';
 
 const addToDOM = (() => {
-    
+
     const displayProject = (myProject) => {
         const myProjectDiv = document.createElement('div');
         myProjectDiv.className = "projectItem";
@@ -60,7 +60,7 @@ const addToDOM = (() => {
 
     //const setPriorityColor = ()
 
-    return{displayProject, displayTask};
+    return{displayProject, displayTask,};
 })();
  
  export default addToDOM;

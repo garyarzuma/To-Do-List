@@ -1,7 +1,7 @@
 import addItemPopUp from "./addItemPopUp";
 import addProjectPopUp from './addProjectPopUp';
-import projectItem from './projectItem';
 import index from './index'
+import localStorageHandler from './localStorageHandler'
 
 const eventListener = (() => {
 
@@ -34,7 +34,9 @@ const eventListener = (() => {
 
     return {addButtonListener, addDeleteTaskListener, addDeleteProjectListener};
 })();
- 
+
+export default eventListener; 
+
 const removeTask = (event) => {
     const projectName = event.target.parentElement.parentElement.id;
     const taskName = event.target.parentElement.querySelector('.title').textContent;
@@ -44,6 +46,8 @@ const removeTask = (event) => {
     myProject.removeTask(myTask); //remove from the project object
 
     event.target.parentElement.remove(); //remove from the HTML document
+
+    localStorageHandler.removeItem(myTask);
 };
 
 const removeProject = (event) => {
@@ -53,10 +57,10 @@ const removeProject = (event) => {
         if (indexPos > -1) {
             index.myProjectList.splice(indexPos, 1);
             event.target.parentElement.remove();
+            localStorageHandler.removeItem(myProject);
         }          
 };
 
- export default eventListener;
 
 
 

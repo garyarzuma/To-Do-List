@@ -1,6 +1,7 @@
 import addToDOM from './addToDOM';
 import toDoItem from './toDoItem';
 import index from './index';
+import localStorageHandler from './localStorageHandler'
 
 const addItemPopUp = (() => {
     const myForm = document.getElementById('myForm');        
@@ -35,6 +36,7 @@ const addItemPopUp = (() => {
             const projectObj = index.myProjectList.find(x => x.title === selectedProject.textContent);
             projectObj.addTask(myItem);
 
+            localStorageHandler.storeTask(myItem);    
             addToDOM.displayTask(myItem);
             
             closeForm();
